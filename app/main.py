@@ -21,7 +21,8 @@ def read_root():
 async def create_upload_file(file: UploadFile = File(...)):
     df = pd.read_csv(file.file)
     # Process the DataFrame (df) as needed
-    return {"filename": file.filename, "columns": df.columns.tolist()}
+    # return {"filename": file.filename, "columns": df.columns.tolist()}
+    return {"filename": file.filename, "data": df.to_json(orient="records")}
 
 
 @app.post("/items/")

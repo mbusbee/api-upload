@@ -1,2 +1,5 @@
 fastapi
+python-multipart
 uvicorn
+pandas
+pydantic
